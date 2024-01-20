@@ -3,5 +3,5 @@ import{i,S as c}from"./assets/vendor-46aac873.js";(function(){const o=document.c
       <p>Views: ${t.views}</p>
       <p>Comments: ${t.comments}</p>
       <p>Downloads: ${t.downloads}</p>
-    `,n.appendChild(e),n.appendChild(r),o.appendChild(n)})}function f(){i.error({title:"Sorry!",message:"There are no images matching your search query. Please try again!"})}function p(){i.error({title:"Error!",message:"An error occurred while fetching images. Please try again later."})}new c(".gallery a",{captionsData:"alt",captionDelay:250});
+    `,n.appendChild(e),n.appendChild(r),o.appendChild(n)})}new c(".gallery",{captionsData:"alt",captionDelay:250});function f(){i.error({title:"Sorry!",message:"There are no images matching your search query. Please try again!"})}function p(){i.error({title:"Error!",message:"An error occurred while fetching images. Please try again later."})}
 //# sourceMappingURL=commonHelpers.js.map
