@@ -5,7 +5,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const apiKey = '41917538-242eecdf4d8f318e540737d69';
 const apiUrl = 'https://pixabay.com/api/';
-// const loader = document.querySelector('.loader')
 
 const searchForm = document
   .getElementById('search-form')
@@ -26,7 +25,6 @@ const searchForm = document
   });
 
 function searchImages(query) {
-
   const params = `key=${apiKey}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&per_page=21`;
 
   fetch(`${apiUrl}?${params}`)
@@ -45,8 +43,8 @@ function searchImages(query) {
     })
     .catch(error => {
       console.error('Error fetching images:', error);
-        showErrorMessage();
-    })
+      showErrorMessage();
+    });
 }
 
 function displayImages(images) {
@@ -74,8 +72,13 @@ function displayImages(images) {
     card.appendChild(metadata);
 
     gallery.appendChild(card);
-  })
+  });
 }
+
+const lightbox = new SimpleLightbox('.gallery', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 function showNoImagesMessage() {
   iziToast.error({
@@ -91,8 +94,3 @@ function showErrorMessage() {
     message: 'An error occurred while fetching images. Please try again later.',
   });
 }
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250
-});
