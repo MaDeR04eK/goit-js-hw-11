@@ -20,7 +20,7 @@ const searchForm = document
       });
       return;
     }
-
+    clearGallery()
     searchImages(searchTerm);
   });
 
@@ -72,6 +72,7 @@ function displayImages(images) {
     card.appendChild(metadata);
 
     gallery.appendChild(card);
+    lightbox.refresh();
   });
 }
 
@@ -94,3 +95,9 @@ function showErrorMessage() {
     message: 'An error occurred while fetching images. Please try again later.',
   });
 }
+
+function clearGallery() {
+  const gallery = document.querySelector('.gallery');
+  gallery.innerHTML = '';
+}
+
